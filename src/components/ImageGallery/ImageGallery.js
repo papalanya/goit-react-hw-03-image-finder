@@ -3,21 +3,21 @@ import PropTypes from 'prop-types';
 import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
 import { ImageGalleryList } from './imageGallery.styled';
 
-export const ImageGallery = ({ images, onOpenModal }) => {
+export const ImageGallery = ({ images, onOpenModal }) => (
   <ImageGalleryList>
     {images.map(({ id, webformatURL, largeImageURL, tags }) => (
       <ImageGalleryItem
         key={id}
         url={webformatURL}
         largeImageURL={largeImageURL}
-        tags={tags}
+        tag={tags}
         openModal={onOpenModal}
       />
     ))}
-  </ImageGalleryList>;
-};
+  </ImageGalleryList>
+);
 
-ImageGallery.propTypes = {
+ImageGallery.prototypes = {
   images: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,

@@ -16,7 +16,7 @@ export const ImageGalleryItem = ({ url, tag, openModal, largeImageURL }) => {
   );
 };
 
-ImageGalleryItem.propTypes = {
+ImageGalleryItem.prototype = {
   url: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   largeImageURL: PropTypes.string.isRequired,
