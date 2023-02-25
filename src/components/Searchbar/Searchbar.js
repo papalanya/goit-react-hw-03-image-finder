@@ -2,6 +2,14 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { HiSearchCircle } from 'react-icons/hi';
 
+import {
+  SearchbarHeader,
+  SearchformForm,
+  SearchformButton,
+  SearchformInput,
+  SearchformLabel,
+} from './Searchbar.styled.js';
+
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -31,22 +39,24 @@ export class Searchbar extends Component {
   render() {
     const { searchQuery } = this.state;
     return (
-      <header>
-        <form onSubmit={this.handleSubmit}>
-          <button type="submit">
-            <HiSearchCircle style={{ width: 25, height: 25}} />
-          </button>
+      <SearchbarHeader>
+        <SearchformForm onSubmit={this.handleSubmit}>
+          <SearchformButton type="submit">
+            <HiSearchCircle style={{ width: 25, height: 25 }} />
+          </SearchformButton>
 
-          <input
-            onChange={this.handleChange}
-            value={searchQuery}
-            type="text"
-            autocomplete="off"
-            autofocus
-            placeholder="Search images and photos"
-          />
-        </form>
-      </header>
+          <SearchformLabel>
+            <SearchformInput
+              onChange={this.handleChange}
+              value={searchQuery}
+              type="text"
+              autocomplete="off"
+              autoFocus
+              placeholder="Search images and photos"
+            />
+          </SearchformLabel>
+        </SearchformForm>
+      </SearchbarHeader>
     );
   }
 }
